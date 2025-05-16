@@ -1,0 +1,171 @@
+1.      student information 
+
+ #include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int roll;
+
+    void input() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter roll number: ";
+        cin >> roll;
+    }
+
+    void display() {
+        cout << "Name: " << name << "\nRoll: " << roll << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.input();
+    s.display();
+    return 0;
+}
+--------------------------------
+
+ 2.  bank account                                                                                                                                                                                    
+   #include <iostream>
+using namespace std;
+
+class Bank {
+public:
+    string name;
+    int balance;
+
+    void setData(string n, int b) {
+        name = n;
+        balance = b;
+    }
+
+    void deposit(int amount) {
+        balance += amount;
+    }
+
+    void withdraw(int amount) {
+        if (amount <= balance)
+            balance -= amount;
+        else
+            cout << "Insufficient balance" << endl;
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Bank b;
+    b.setData("Aman", 1000);
+    b.deposit(500);
+    b.withdraw(300);
+    b.display();
+    return 0;
+}
+--------------------------------
+
+3.    simple calculator                                                                                                                                                                                  #include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+    int a, b;
+
+    void input(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    void add() {
+        cout << "Sum: " << a + b << endl;
+    }
+
+    void subtract() {
+        cout << "Difference: " << a - b << endl;
+    }
+
+    void multiply() {
+        cout << "Product: " << a * b << endl;
+    }
+
+    void divide() {
+        if (b != 0)
+            cout << "Division: " << (float)a / b << endl;
+        else
+            cout << "Cannot divide by zero" << endl;
+    }
+};
+
+int main() {
+    Calculator c;
+    c.input(10, 2);
+    c.add();
+    c.subtract();
+    c.multiply();
+    c.divide();
+    return 0;
+}
+--------------------------------
+
+4.      employ detail                                                                                                                                                                             
+    #include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    string name;
+    int id;
+    float salary;
+
+    void getData() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter ID: ";
+        cin >> id;
+        cout << "Enter salary: ";
+        cin >> salary;
+    }
+
+    void displayData() {
+        cout << "\nName: " << name;
+        cout << "\nID: " << id;
+        cout << "\nSalary: " << salary << endl;
+    }
+};
+
+int main() {
+    Employee e;
+    e.getData();
+    e.displayData();
+    return 0;
+}
+--------------------------------
+
+ 5.    Temperature Converter (Celsius to.                 Fahrenheit)                                                                                                                                                         
+    #include <iostream>
+using namespace std;
+
+class Temperature {
+public:
+    float celsius;
+
+    void setTemp(float temp) {
+        celsius = temp;
+    }
+
+    float toFahrenheit() {
+        return (celsius * 9 / 5) + 32;
+    }
+};
+
+int main() {
+    Temperature t;
+    t.setTemp(37);
+    cout << "Fahrenheit: " << t.toFahrenheit() << endl;
+    return 0;
+}
+--------------------------------
